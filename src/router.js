@@ -3,16 +3,23 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-import BimaCarriersLayout from '@/components/dashboard/BimaCarriersLayout'
+// import BimaCarriersLayout from '@/components/dashboard/BimaCarriersLayout'
 
 const routes = [
     {
         path: '/',
-        component: BimaCarriersLayout
-    },
-    {
-        path: '/our-command',
-        component: ()=> import('@/views/our-command/BimaOurCommand.vue')
+        component: () => import('@/components/dashboard/BimaCarriersLayout'),
+        children: [
+            {
+                path: '',
+                name: 'Home',
+                component: () => import('@/views/content/BimaCarriersContent')
+            },
+            {
+                path: '/our-group',
+                component: () => import('@/views/our-command/BimaOurCommand')
+            }
+        ]
     }
 ];
 
