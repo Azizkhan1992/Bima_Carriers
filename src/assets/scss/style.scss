@@ -1,0 +1,291 @@
+@import "./mixins";
+
+@font-face {
+  font-family: "Mont";
+  src: url("../font/Mont/Mont/Mont-Bold.otf");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Mont";
+}
+
+.bima-main-layout {
+  width: 100%;
+  height: 100vh;
+  @include Flex(column, space-between);
+  position: relative;
+
+
+//   Header
+  .bima-header-container {
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    top: 20px;
+
+    .bima-header-content {
+      width: 85%;
+      height: 100%;
+      margin: auto;
+      @include Flex(row, space-between);
+
+      .header-left {
+        width: 20%;
+        height: 100%;
+        border-right: 1.5px solid #bfbfbf;
+      }
+
+      .header-right {
+        width: 80%;
+        height: 100%;
+        @include Flex(column, space-between);
+
+        .right-top {
+          width: 100%;
+          height: 50%;
+          border-bottom: 1.5px solid #bfbfbf;
+          @include Flex(row, space-around);
+
+          .top-center {
+            width: 65%;
+            height: 100%;
+            @include Flex(row, space-around);
+
+            a {
+              text-decoration: none;
+              @include Font(0.9rem);
+              color: #fbbe07;
+              background: linear-gradient(#fff, #fbbe07) bottom/0% 3px no-repeat;
+              transition: all 1s ease-out;
+
+              &:hover {
+                background-size: 100% 3px;
+                transition: all 1s ease-in;
+              }
+            }
+          }
+          .top-right {
+            width: 30%;
+            height: 100%;
+            @include Flex(row, space-around);
+
+            .right-phone {
+              width: 65%;
+              height: 100%;
+              @include Flex(row, space-around);
+
+              p {
+                @include Font;
+              }
+            }
+            .right-lang {
+              width: 25%;
+              height: 100%;
+              position: relative;
+              cursor: pointer;
+
+              .lang-visible {
+                width: 100%;
+                height: 100%;
+                @include Flex(row, space-around);
+
+                svg {
+                  width: 14px;
+                  height: 10px;
+                  transition: all 1s ease-out;
+
+                  &.svg-active {
+                    transform: rotate(180deg);
+                    transition: all 1s ease-in;
+                  }
+                }
+              }
+              .lang-hidden {
+                width: 100%;
+                height: 0;
+                position: absolute;
+                top: 55px;
+                left: 10px;
+                @include Flex(column, space-around);
+                transition: height 1s ease-out;
+
+                .lang-items {
+                  width: 100%;
+                  height: 33%;
+
+                  span {
+                  }
+                }
+
+                &.deactive {
+                  overflow: hidden;
+                }
+                &.active {
+                  height: 75px;
+                  transition: height 1s ease-in;
+                }
+              }
+            }
+          }
+        }
+        .right-bottom {
+          width: 100%;
+          height: 50%;
+          @include Flex(row, space-around);
+
+          .bottom-center {
+            width: 85%;
+            height: 100%;
+
+            ul {
+              width: 100%;
+              height: 100%;
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              @include Flex(row, space-around);
+              position: relative;
+
+              li {
+                width: 20%;
+                height: 100%;
+                cursor: pointer;
+                @include Flex;
+
+                a {
+                  text-decoration: none;
+                }
+
+                .about-visible {
+                  width: 100%;
+                  height: 100%;
+                  @include Flex(row);
+
+                  svg {
+                    width: 12px;
+                    height: 8px;
+                    margin-left: 5px;
+                    transition: all 1s ease-out;
+
+                    &.svg-active {
+                      transform: rotate(180deg);
+                      transition: transform 1s ease-in;
+                    }
+                  }
+                }
+                .about-hidden {
+                  width: 25%;
+                  height: 0;
+                  position: absolute;
+                  top: 50px;
+                  @include Flex(column, space-around);
+                  align-items: flex-start;
+                  transition: height 1s ease-out;
+                  margin-left: 125px;
+
+                  &.about-deactive {
+                    overflow: hidden;
+                  }
+
+                  &.about-active {
+                    height: 75px;
+                    transition: height 1s ease-in;
+                  }
+
+                  a {
+                    text-decoration: none;
+                    margin-left: 5px;
+                  }
+                }
+
+                .insurance-visible {
+                  width: 100%;
+                  height: 100%;
+                  @include Flex(row, space-between);
+
+                  svg {
+                    width: 12px;
+                    height: 8px;
+                    transition: all 1s ease-out;
+
+                    &.svg-active {
+                      transform: rotate(180deg);
+                      transition: transform 1s ease-in;
+                    }
+                  }
+                }
+                .insurance-hidden {
+                  width: 25%;
+                  height: 0;
+                  position: absolute;
+                  @include Flex(column, space-around);
+                  align-items: flex-start;
+                  top: 50px;
+                  margin-left: 35px;
+                  transition: height 1s ease-out;
+
+                  &.insurance-deactive {
+                    overflow: hidden;
+                  }
+                  &.insurance-active {
+                    height: 50px;
+                    transition: height 1s ease-in;
+                  }
+                }
+              }
+            }
+          }
+          .bottom-right {
+            width: 15%;
+            height: 100%;
+            @include Flex;
+            position: relative;
+
+            img {
+              position: absolute;
+              right: 15px;
+              width: 15px;
+              height: 15px;
+            }
+
+            input {
+              width: 85%;
+              height: 50%;
+              border: none;
+              border-radius: 3px;
+              padding: 10px;
+              box-sizing: border-box;
+              background: transparent;
+
+              &:hover {
+                border: 1.5px solid #fbbe07;
+              }
+
+              &:focus {
+                outline: none;
+                border: 1.5px solid #fbbe07;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+//   Content
+.bima-content-container{
+    width: 100%;
+    height: auto;
+    @include Flex(column, space-between);
+
+    
+    // One Top Container
+    .content-top-container{
+        width: 100%;
+        height: 860px;
+        background: url('@/assets/Content/OneTop/Mask.png'), linear-gradient(90deg, rgba(26, 29, 32, 0.55) 50%, rgba(26, 29, 32, 0.45) 98.28%); 
+    }
+}
+}
