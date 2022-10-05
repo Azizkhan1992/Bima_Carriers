@@ -18,6 +18,10 @@ const routes = [
             {
                 path: '/our-group',
                 component: () => import('@/views/our-command/BimaOurCommand')
+            },
+            {
+                path: '/news',
+                component: () => import('@/views/news/BimaNews.vue')
             }
         ]
     }

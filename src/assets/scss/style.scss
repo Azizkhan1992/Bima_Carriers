@@ -13,12 +13,12 @@ body {
 
 .bima-main-layout {
   width: 100%;
-  height: 100vh;
+  height: auto;
   @include Flex(column, space-between);
   position: relative;
+  padding-bottom: 25px;
 
-
-//   Header
+  //   Header
   .bima-header-container {
     width: 100%;
     height: 90px;
@@ -91,6 +91,10 @@ body {
                 height: 100%;
                 @include Flex(row, space-around);
 
+                span {
+                  @include Font(1rem, 20px, 600);
+                }
+
                 svg {
                   width: 14px;
                   height: 10px;
@@ -100,6 +104,10 @@ body {
                     transform: rotate(180deg);
                     transition: all 1s ease-in;
                   }
+                }
+
+                svg path {
+                  fill: #312b2b;
                 }
               }
               .lang-hidden {
@@ -114,8 +122,10 @@ body {
                 .lang-items {
                   width: 100%;
                   height: 33%;
+                  z-index: 1;
 
                   span {
+                    @include Font(1rem, 20px, 600);
                   }
                 }
 
@@ -156,12 +166,17 @@ body {
 
                 a {
                   text-decoration: none;
+                  @include Font(1rem, 20px, 600);
                 }
 
                 .about-visible {
                   width: 100%;
                   height: 100%;
                   @include Flex(row);
+
+                  span {
+                    @include Font(1rem, 20px, 600);
+                  }
 
                   svg {
                     width: 12px;
@@ -173,6 +188,10 @@ body {
                       transform: rotate(180deg);
                       transition: transform 1s ease-in;
                     }
+                  }
+
+                  svg path {
+                    fill: #312b2b;
                   }
                 }
                 .about-hidden {
@@ -205,6 +224,10 @@ body {
                   height: 100%;
                   @include Flex(row, space-between);
 
+                  span {
+                    @include Font(1rem, 20px, 600);
+                  }
+
                   svg {
                     width: 12px;
                     height: 8px;
@@ -214,6 +237,9 @@ body {
                       transform: rotate(180deg);
                       transition: transform 1s ease-in;
                     }
+                  }
+                  svg path {
+                    fill: #312b2b;
                   }
                 }
                 .insurance-hidden {
@@ -274,18 +300,530 @@ body {
     }
   }
 
-//   Content
-.bima-content-container{
+  //   Content Home Page
+  .bima-content-container {
     width: 100%;
     height: auto;
     @include Flex(column, space-between);
 
-    
     // One Top Container
-    .content-top-container{
-        width: 100%;
-        height: 860px;
-        background: url('@/assets/Content/OneTop/Mask.png'), linear-gradient(90deg, rgba(26, 29, 32, 0.55) 50%, rgba(26, 29, 32, 0.45) 98.28%); 
+    .content-top-container {
+      width: 100%;
+      height: 860px;
+      background: url("@/assets/Content/OneTop/Mask.png"),
+        linear-gradient(
+          90deg,
+          rgba(26, 29, 32, 0.55) 50%,
+          rgba(26, 29, 32, 0.45) 98.28%
+        );
+
+      .top-content {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column);
+        align-items: flex-start;
+
+        h1 {
+          @include Font(2.75rem, 56px, 800);
+          color: #fff;
+        }
+        p {
+          @include Font(1.15rem, 34px, 600);
+          color: #fff;
+        }
+
+        button {
+          width: 15%;
+          height: 5%;
+          border-radius: 100px;
+          border: none;
+          padding: 0;
+          background-color: #fbbe07;
+          @include Font(1rem, 22px, 600);
+          color: #312b2b;
+          cursor: pointer;
+          transition: all 0.5s ease-out;
+
+          &:hover {
+            background: #ffffff;
+            color: #fbbe07;
+            border: 1.5px solid #fbbe07;
+            transition: all 0.5s ease-in;
+          }
+        }
+      }
     }
-}
+
+    // Two Slider
+    .bima-slider-container {
+      width: 100%;
+      height: 500px;
+      margin-top: 100px;
+
+      .bima-slider-content {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-around);
+        align-items: flex-start;
+
+        .slider-shower {
+          width: 100%;
+          height: 85%;
+          position: relative;
+          overflow: hidden;
+
+          .slider-wrapper {
+            width: 300%;
+            height: 100%;
+            @include Flex(row, space-between);
+
+            .slider-items {
+              width: 20%;
+              height: 100%;
+              margin-right: 0.5%;
+              @include Flex(column, space-around);
+              align-items: flex-start;
+              box-shadow: 0px 0px 12px 3px rgba(56, 56, 56, 0.05);
+
+              button {
+                width: 150px;
+                height: 45px;
+                margin-left: 20px;
+                border-radius: 100px;
+                border: none;
+                background-color: #fbbe07;
+                padding: 0;
+                cursor: pointer;
+                @include Font(1rem, 20px, 600);
+                color: #312b2b;
+                transition: all 0.5s ease-out;
+
+                &:hover {
+                  background-color: #fff;
+                  border: 1.5px solid #fbbe07;
+                  color: #fbbe07;
+                  transition: all 0.5s ease-in;
+                }
+              }
+
+              p {
+                @include Font(1.25rem, 165%, 800);
+                color: #312b2b;
+                margin-left: 20px;
+              }
+              span {
+                @include Font(1rem, 160%, 600);
+                color: #8d8d8d;
+                display: inline-block;
+                margin-left: 20px;
+              }
+
+              img {
+                width: 100%;
+                height: 45%;
+              }
+            }
+          }
+        }
+
+        .top-items {
+          width: 100%;
+          height: 15%;
+          @include Flex(row, space-between);
+
+          .items-right {
+            width: 15%;
+            height: 100%;
+            @include Flex(row, space-around);
+            position: relative;
+
+            button {
+              width: 30px;
+              height: 30px;
+              @include Flex;
+              border-radius: 50%;
+              cursor: pointer;
+              background-color: #fff;
+              border: 1.5px solid #312b2b;
+
+              &:hover {
+                border: 1.5px solid #fbbe07;
+
+                svg path {
+                  fill: #fbbe07;
+                }
+              }
+
+              svg path {
+                fill: #312b2b;
+              }
+            }
+          }
+
+          h1 {
+            @include Font(2rem, 42px, 800);
+            color: #312b2b;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    // Three News
+    .bima-news-container {
+      width: 100%;
+      height: 825px;
+      margin-top: 100px;
+      background-color: #f9f9f9;
+      border-radius: 250px 0;
+      @include Flex;
+
+      .bima-news-content {
+        width: 85%;
+        height: 85%;
+        @include Flex(column, space-between);
+
+        .news-top {
+          width: 100%;
+          height: 10%;
+          @include Flex(row, space-between);
+
+          h1 {
+            @include Font(2rem, 42px, 800);
+            color: #312b2b;
+          }
+
+          a {
+            @include Font(1rem, 145%, 600);
+            color: #312b2b;
+            text-decoration: none;
+          }
+        }
+
+        .news-bottom {
+          width: 100%;
+          height: 85%;
+          @include Flex(column, space-between);
+          flex-wrap: wrap;
+          flex: 0 auto;
+
+          .right-items {
+            width: 27%;
+            height: 45%;
+            @include Flex(column, space-around);
+            align-items: flex-start;
+
+            span {
+              @include Font(1rem, 160%, 600);
+              color: #fbbe07;
+            }
+            a {
+              @include Font(1.25rem, 140%, 600);
+              text-decoration: none;
+            }
+            p {
+              @include Font(1rem, 160%, 600);
+              color: #8d8d8d;
+            }
+          }
+
+          .right-items img {
+            display: none;
+          }
+
+          .active {
+            width: 40%;
+            height: 100%;
+
+            img {
+              display: block;
+              width: 100%;
+              height: 55%;
+            }
+          }
+        }
+      }
+    }
+
+    // Four Reviews
+    .bima-reviews-container {
+      width: 100%;
+      height: 400px;
+      margin-top: 100px;
+
+      .bima-reviews-content {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-between);
+
+        .reviews-top {
+          width: 100%;
+          height: 10%;
+          @include Flex(row, space-between);
+
+          .reviews-top-right {
+            width: 10%;
+            height: 100%;
+            @include Flex(row, space-around);
+
+            button {
+              width: 32px;
+              height: 32px;
+              @include Flex;
+              border-radius: 50%;
+              border: 1.5px solid #312b2b;
+              background-color: #fff;
+              cursor: pointer;
+
+              &:hover {
+                border: 1.5px solid #fbbe07;
+
+                svg path {
+                  fill: #fbbe07;
+                }
+              }
+
+              svg path {
+                fill: #312b2b;
+              }
+            }
+          }
+        }
+        .reviews-bottom {
+          width: 100%;
+          height: 85%;
+          position: relative;
+          overflow: hidden;
+
+          .reviews-wrapper {
+            width: 300%;
+            height: 100%;
+            @include Flex(row, space-around);
+
+            .reviews-items {
+              width: 46%;
+              height: 100%;
+              margin-right: 0.5%;
+              @include Flex(column, space-around);
+              align-items: flex-start;
+              box-shadow: 0px 0px 12px 3px rgba(56, 56, 56, 0.05);
+
+              .item-top {
+                width: 100%;
+                height: 25%;
+                margin-left: 20px;
+                @include Flex(row, space-between);
+
+                .item-top-center {
+                  width: 45%;
+                  height: 100%;
+                  @include Flex(column, center);
+                  align-items: flex-start;
+
+                  h2 {
+                    @include Font(1.15rem, 165%, 800);
+                    margin: 0;
+                    margin-top: 10px;
+                  }
+                  p {
+                    @include Font(1rem, 165%, 600);
+                    color: #514a4a;
+                  }
+                }
+
+                .item-top-right {
+                  width: 35%;
+                  height: 100%;
+                  @include Flex(row);
+                  user-select: none;
+
+                  .star {
+                    font-size: 1rem;
+                    color: #8d8d8d;
+                    background-color: unset;
+                    border: none;
+
+                    &.active {
+                      color: #ff9800;
+                    }
+
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
+                }
+
+                img {
+                  width: 85px;
+                  height: 85px;
+                  border-radius: 50%;
+                }
+              }
+
+              .item-bottom {
+                width: 100%;
+                height: 60%;
+                margin-left: 20px;
+                position: relative;
+
+                span {
+                  display: inline-block;
+                  @include Font(1rem, 170%, 600);
+                  color: #8d8d8d;
+                  width: 90%;
+                }
+
+                img {
+                  position: absolute;
+                  z-index: -1;
+
+                  &.img-one {
+                    left: 15px;
+                  }
+                  &.img-two {
+                    left: 50px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Five About Company
+    .about-company-container{
+      width: 100%;
+      height: 670px;
+      margin-top: 100px;
+      background-color: #f9f9f9;
+      border-radius: 250px 0;
+      @include Flex;
+
+      .about-company-content{
+        width: 85%;
+        height: 85%;
+        @include Flex(column, space-between);
+
+        .about-company-top{
+          width: 100%;
+          height: 20%;
+          @include Flex(row, space-between);
+
+          .top-center{
+            width: 35%;
+            height: 100%;
+            @include Flex(row, space-around);
+
+            p{
+              @include Font(1.15rem, 165%, 600);
+              color: #514a4a;
+
+              i{
+                @include Font(1.5rem, 165%, 600);
+                color: #fbbe07;
+                font-style: normal;
+              }
+            }
+          }
+
+          .top-right{
+            width: 25%;
+            height: 100%;
+            @include Flex;
+            position: relative;
+
+            .years-visible{
+              width: 50%;
+              height: 50%;
+              background-color: #fbbe07;
+              border-radius: 50px;
+              cursor: pointer;
+              @include Flex(row, space-evenly);
+
+              img{
+                width: 14px;
+                height: 10px;
+                transition: all 0.5s ease-out;
+
+                &.img-active{
+                  transform: rotate(180deg);
+                  transition: all 0.5s ease-in;
+                }
+              }
+            }
+
+            .years-hidden{
+              position: absolute;
+              top: 85%;
+              width: 100px;
+              height: 0;
+              overflow-y: scroll;
+              transition: height 1s ease-out;
+
+              &.years-deactive{
+                overflow: hidden;
+              }
+
+              &.years-active{
+                height: 200px;
+                transition: height 1s ease-in;
+              }
+
+              .year-items{
+                width: 100%;
+                height: 12%;
+                cursor: pointer;
+              }
+            }
+          }
+
+          h1{
+            @include Font(2rem, 42px, 800)
+          }
+        }
+
+        .about-company-bottom{
+          width: 100%;
+          height: 75%;
+          @include Flex(row, space-between);
+
+          .about-bottom-left{
+            width: 54%;
+            height: 100%;
+            @include Flex(row, space-between);
+            flex-wrap: wrap;
+            flex: 0 auto;
+
+            .left-items{
+              width: 48%;
+              height: 30%;
+              @include Flex(row, space-around);
+
+              .item-title{
+                width: 65%;
+                height: 75%;
+
+                p{
+                  @include Font(1.5rem, 165%, 800);
+                  margin: 0;
+                  margin: 10px 0 5px 0;
+                }
+
+                span{
+                  @include Font(1rem, 165%, 600);
+                  color: #8d8d8d;
+                  display: inline-block;
+                  width: 95%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

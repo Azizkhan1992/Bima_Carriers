@@ -74,7 +74,7 @@
                 </div>
               </li>
               <li><a href="/">Главная</a></li>
-              <li><a href="">Новости</a></li>
+              <li><a href="/news">Новости</a></li>
               <li>
                 <div class="insurance-visible" @click="insuranceActive">
                     <span>Страховые услуги</span>
