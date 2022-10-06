@@ -16,6 +16,10 @@ const routes = [
                 component: () => import('@/views/content/BimaCarriersContent')
             },
             {
+                path: '/driving-insurance',
+                component: () => import('@/views/driving-insurance/BimaDrivingInsurance.vue')
+            },
+            {
                 path: '/our-group',
                 component: () => import('@/views/our-command/BimaOurCommand')
             },

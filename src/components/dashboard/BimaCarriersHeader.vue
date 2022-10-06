@@ -69,7 +69,7 @@
                   </svg>
                 </div>
                 <div class="about-hidden" :class="isAboutActive ? 'about-active' : 'about-deactive'">
-                    <a href="/our-command">Наша команда</a>
+                    <a href="/our-group">Наша команда</a>
                     <a href="">Обратная связь</a>
                 </div>
               </li>
@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="insurance-hidden" :class="isInsuranceActive ? 'insurance-active' : 'insurance-deactive'">
-                    <a href="#">Спокойствие за рулем</a>
+                    <a href="/driving-insurance">Спокойствие за рулем</a>
                 </div>
               </li>
               <li><a href="">Точки продаж</a></li>

@@ -16,7 +16,6 @@ body {
   height: auto;
   @include Flex(column, space-between);
   position: relative;
-  padding-bottom: 25px;
 
   //   Header
   .bima-header-container {
@@ -211,6 +210,7 @@ body {
                   &.about-active {
                     height: 75px;
                     transition: height 1s ease-in;
+                    z-index: 5;
                   }
 
                   a {
@@ -258,6 +258,7 @@ body {
                   &.insurance-active {
                     height: 50px;
                     transition: height 1s ease-in;
+                    z-index: 5;
                   }
                 }
               }
@@ -695,7 +696,7 @@ body {
     }
 
     // Five About Company
-    .about-company-container{
+    .about-company-container {
       width: 100%;
       height: 670px;
       margin-top: 100px;
@@ -703,26 +704,26 @@ body {
       border-radius: 250px 0;
       @include Flex;
 
-      .about-company-content{
+      .about-company-content {
         width: 85%;
         height: 85%;
         @include Flex(column, space-between);
 
-        .about-company-top{
+        .about-company-top {
           width: 100%;
           height: 20%;
           @include Flex(row, space-between);
 
-          .top-center{
+          .top-center {
             width: 35%;
             height: 100%;
             @include Flex(row, space-around);
 
-            p{
+            p {
               @include Font(1.15rem, 165%, 600);
               color: #514a4a;
 
-              i{
+              i {
                 @include Font(1.5rem, 165%, 600);
                 color: #fbbe07;
                 font-style: normal;
@@ -730,13 +731,13 @@ body {
             }
           }
 
-          .top-right{
+          .top-right {
             width: 25%;
             height: 100%;
-            @include Flex;
+            @include Flex(row, flex-end);
             position: relative;
 
-            .years-visible{
+            .years-visible {
               width: 50%;
               height: 50%;
               background-color: #fbbe07;
@@ -744,76 +745,94 @@ body {
               cursor: pointer;
               @include Flex(row, space-evenly);
 
-              img{
+              img {
                 width: 14px;
                 height: 10px;
                 transition: all 0.5s ease-out;
 
-                &.img-active{
+                &.img-active {
                   transform: rotate(180deg);
                   transition: all 0.5s ease-in;
                 }
               }
             }
 
-            .years-hidden{
+            .years-hidden {
               position: absolute;
               top: 85%;
               width: 100px;
               height: 0;
               overflow-y: scroll;
               transition: height 1s ease-out;
+              z-index: 5;
 
-              &.years-deactive{
+              &::-webkit-scrollbar {
+                width: 16px;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                background: linear-gradient(
+                    rgba(85, 87, 89, 0.1) 0%,
+                    #fbbe07 45%,
+                    #1eb53a 90%,
+                    #fbbe07 135%,
+                    rgba(85, 87, 89, 0)
+                  )
+                  180%;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                border-radius: 15px;
+              }
+
+              &.years-deactive {
                 overflow: hidden;
               }
 
-              &.years-active{
-                height: 200px;
+              &.years-active {
+                height: 165px;
                 transition: height 1s ease-in;
               }
 
-              .year-items{
+              .year-items {
                 width: 100%;
-                height: 12%;
+                height: 20%;
                 cursor: pointer;
               }
             }
           }
 
-          h1{
-            @include Font(2rem, 42px, 800)
+          h1 {
+            @include Font(2rem, 42px, 800);
           }
         }
 
-        .about-company-bottom{
+        .about-company-bottom {
           width: 100%;
           height: 75%;
           @include Flex(row, space-between);
 
-          .about-bottom-left{
+          .about-bottom-left {
             width: 54%;
             height: 100%;
             @include Flex(row, space-between);
             flex-wrap: wrap;
             flex: 0 auto;
 
-            .left-items{
+            .left-items {
               width: 48%;
               height: 30%;
               @include Flex(row, space-around);
 
-              .item-title{
+              .item-title {
                 width: 65%;
-                height: 75%;
+                height: 80%;
 
-                p{
+                p {
                   @include Font(1.5rem, 165%, 800);
                   margin: 0;
                   margin: 10px 0 5px 0;
                 }
 
-                span{
+                span {
                   @include Font(1rem, 165%, 600);
                   color: #8d8d8d;
                   display: inline-block;
@@ -821,6 +840,588 @@ body {
                 }
               }
             }
+          }
+
+          .about-bottom-right {
+            width: 42%;
+            height: 100%;
+            position: relative;
+            @include Flex;
+
+            img {
+              width: 90%;
+              height: 90%;
+            }
+
+            p {
+              @include Font(1rem, 165%, 600);
+            }
+
+            .img-one {
+              width: 36px;
+              height: 36px;
+              position: absolute;
+              top: 18%;
+              left: 27%;
+              transition: all 1s ease-out;
+
+              &:hover {
+                transform: rotateY(180deg);
+                transition: transform 1s ease-in;
+                cursor: pointer;
+              }
+            }
+            .title-one {
+              position: absolute;
+              top: 16%;
+              left: 35%;
+            }
+            .img-two {
+              width: 36px;
+              height: 36px;
+              position: absolute;
+              top: 47%;
+              left: 20%;
+              transition: all 1s ease-out;
+
+              &:hover {
+                transform: rotateY(180deg);
+                transition: transform 1s ease-in;
+                cursor: pointer;
+              }
+            }
+            .title-two {
+              position: absolute;
+              top: 45%;
+              left: 27%;
+            }
+            .img-three {
+              width: 36px;
+              height: 36px;
+              position: absolute;
+              top: 62%;
+              left: 17%;
+              transition: all 1s ease-out;
+
+              &:hover {
+                transform: rotateY(180deg);
+                transition: transform 1s ease-in;
+                cursor: pointer;
+              }
+            }
+            .title-three {
+              position: absolute;
+              top: 60%;
+              left: 25%;
+            }
+            .img-four {
+              width: 36px;
+              height: 36px;
+              position: absolute;
+              top: 67%;
+              left: 51%;
+              transition: all 1s ease-out;
+
+              &:hover {
+                transform: rotateY(180deg);
+                transition: transform 1s ease-in;
+                cursor: pointer;
+              }
+            }
+            .title-four {
+              position: absolute;
+              top: 65%;
+              left: 58%;
+            }
+          }
+        }
+      }
+    }
+
+    // Six Partners Slider
+    .partners-slider-container {
+      width: 100%;
+      height: 200px;
+      margin-top: 100px;
+
+      .partners-slider-content {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-between);
+
+        .partners-top {
+          width: 100%;
+          height: 20%;
+          @include Flex(row, space-between);
+
+          .top-right {
+            width: 10%;
+            height: 100%;
+            @include Flex(row, space-between);
+
+            button {
+              width: 32px;
+              height: 32px;
+              border-radius: 16px;
+              border: 1.5px solid #312b2b;
+              padding: 0;
+              cursor: pointer;
+              background-color: #ffffff;
+              @include Flex;
+
+              svg path {
+                fill: #312b2b;
+              }
+
+              &:hover {
+                border: 1.5px solid #fbbe07;
+
+                svg path {
+                  fill: #fbbe07;
+                }
+              }
+            }
+          }
+
+          h1 {
+            @include Font(2rem, 42px, 800);
+          }
+        }
+
+        .partners-bottom {
+          width: 100%;
+          height: 70%;
+          position: relative;
+          overflow: hidden;
+
+          .slider-wrapper {
+            width: 300%;
+            height: 100%;
+            @include Flex(row, space-around);
+
+            .slider-items {
+              width: 15.7%;
+              height: 90%;
+              margin-right: 0.5%;
+              box-shadow: 0px 0px 12px 3px rgba(56, 56, 56, 0.05);
+              @include Flex;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Content Driving Insurance
+
+  // Driving Insurance Header
+  .driving-insurance-container {
+    width: 100%;
+    height: auto;
+    margin-top: 110px;
+
+    .header-container {
+      width: 100%;
+      height: 460px;
+      margin-top: 20px;
+      background: url("@/assets/DrivingInsurance/Header/bgImage.png") no-repeat;
+      background-size: 100% 100%;
+
+      .header-bg-container {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(26, 29, 32, 0.65) 50%,
+          rgba(26, 29, 32, 0.55) 98.28%
+        );
+        opacity: 0.85;
+
+        .header-content {
+          width: 85%;
+          height: 100%;
+          margin: auto;
+          @include Flex(column);
+          align-items: flex-start;
+
+          h1 {
+            @include Font(2.15rem, 160%, 800);
+            color: #ffffff;
+            width: 65%;
+
+            i {
+              @include Font(2.5rem, 160%, 800);
+              color: #fbbe07;
+            }
+          }
+
+          .header-breadcrumbs {
+            width: 100%;
+            height: 15%;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  // Driving Insurance Content
+  .driving-insurance-content {
+    width: 100%;
+    height: 880px;
+    margin: 80px 0;
+
+    .driving-insurance-wrapper {
+      width: 85%;
+      height: 100%;
+      margin: auto;
+      @include Flex;
+      background: #fff;
+      box-shadow: 0px 0px 12px 3px rgba(56, 56, 56, 0.05);
+
+      .driving-inner-wrapper {
+        width: 97%;
+        height: 97%;
+        @include Flex(column, space-between);
+
+        hr {
+          width: 120px;
+          height: 2px;
+          align-self: flex-start;
+          margin: 0;
+          color: #fbbe07;
+          background: #fbbe07;
+          unicode-bidi: unset;
+          border-width: 0;
+        }
+
+        .driving-top {
+          width: 100%;
+          height: 10%;
+          @include Flex(row, space-between);
+
+          h3 {
+            @include Font(1.25rem, 165%, 800);
+          }
+
+          p {
+            @include Font(1rem, 165%, 600);
+
+            &.center-title {
+              margin-left: 150px;
+            }
+
+            i {
+              @include Font(1.25rem, 165%, 600);
+              color: #fbbe07;
+            }
+          }
+        }
+
+        .driving-content {
+          width: 100%;
+          height: 89.5%;
+          @include Flex(row, space-between);
+
+          .content-left {
+            width: 66%;
+            height: 100%;
+            @include Flex(column, space-around);
+
+            p {
+              @include Font(1rem, 170%, 600);
+              color: #8d8d8d;
+            }
+
+            .content-left-center {
+              width: 100%;
+              height: 35%;
+              @include Flex(row, space-between);
+              flex-wrap: wrap;
+              flex: 0 auto;
+
+              .title-one {
+                width: 48%;
+                height: 64%;
+                @include Flex(column, space-around);
+                align-items: flex-start;
+
+                .title-items {
+                  width: 100%;
+                  height: 30%;
+                  @include Flex(row, flex-start);
+
+                  span {
+                    @include Font(0.85rem, 150%, 600);
+                    color: #8d8d8d;
+                    display: inline-block;
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                  }
+                }
+
+                h3 {
+                  @include Font(1rem, 165%, 600);
+                }
+              }
+              .title-two {
+                width: 100%;
+                height: 34%;
+                @include Flex(column, space-around);
+                align-items: flex-start;
+
+                .title-items {
+                  width: 100%;
+                  height: 50%;
+                  @include Flex(row, flex-start);
+
+                  span {
+                    @include Font(0.85rem, 150%, 600);
+                    color: #8d8d8d;
+                    display: inline-block;
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                  }
+                }
+
+                h3 {
+                  @include Font(1rem, 150%, 600);
+                  margin: 0;
+                  margin: 15px 0;
+                }
+              }
+            }
+
+            .content-left-bottom {
+              width: 100%;
+              height: 35%;
+              @include Flex(column, space-around);
+              align-items: flex-start;
+
+              h3 {
+                @include Font(1rem, 165%, 600);
+                margin: 0;
+                margin: 10px 0;
+              }
+
+              .left-bottom-items {
+                width: 100%;
+                height: 14%;
+                @include Flex(row, flex-start);
+
+                p {
+                  @include Font(1rem, 150%, 600);
+                  color: #fbbe07;
+                  margin: 0;
+                  margin-top: 5px;
+                }
+                span {
+                  @include Font(0.85rem, 150%, 600);
+                  color: #8d8d8d;
+                  display: inline-block;
+                  padding-left: 10px;
+                  box-sizing: border-box;
+                }
+              }
+            }
+          }
+
+          .content-right {
+            width: 32%;
+            height: 100%;
+            @include Flex;
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+  }
+
+  // Our Group Content
+  // Header
+  .our-group-container {
+    width: 100%;
+    height: auto;
+    margin-top: 130px;
+
+    .group-header-container {
+      width: 100%;
+      height: 460px;
+      background: url("@/assets/OurGroup/Header/img.png") no-repeat;
+      background-size: 100% 100%;
+
+      .group-bg-container {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(26, 29, 32, 0.75) 50%,
+          rgba(26, 29, 32, 0.65) 98.28%
+        );
+        opacity: 0.85;
+
+        .group-content {
+          width: 85%;
+          height: 100%;
+          margin: auto;
+          @include Flex(column);
+          align-items: flex-start;
+
+          h2 {
+            @include Font(2rem, 160%, 800);
+            color: #ffffff;
+            opacity: 1;
+          }
+          .group-breadcrumbs {
+            width: 100%;
+            height: 10%;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  // Our Group Header
+  .our-group-content {
+    width: 100%;
+    height: 820px;
+    margin-top: 100px;
+
+    .our-group-wrapper {
+      width: 85%;
+      height: 100%;
+      margin: auto;
+      @include Flex(row, space-between);
+      flex-wrap: wrap;
+      flex: 0 auto;
+
+      .group-items {
+        width: 24%;
+        height: 46%;
+        box-shadow: 0px 0px 12px 3px rgba(56, 56, 56, 0.05);
+        @include Flex(column, space-between);
+        align-items: flex-start;
+
+        img {
+          width: 100%;
+          height: 50%;
+        }
+
+        .item-title {
+          width: 100%;
+          height: 25%;
+          padding-left: 20px;
+          box-sizing: border-box;
+
+          h5 {
+            @include Font(1.15rem, 165%, 800);
+            margin: 0;
+          }
+          p {
+            @include Font(1rem, 150%, 600);
+            color: #8d8d8d;
+            margin: 0;
+            margin-top: 10px;
+          }
+        }
+
+        .item-mail {
+          width: 100%;
+          height: 10%;
+          @include Flex(row, flex-start);
+          align-items: flex-start;
+          margin-left: 20px;
+
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // Footer
+  .bima-footer-container {
+    width: 100%;
+    height: 450px;
+    margin-top: 100px;
+    background-color: #2f2e33;
+
+    .bima-footer-content {
+      width: 85%;
+      height: 100%;
+      margin: auto;
+      @include Flex(column, space-between);
+
+      .content-top {
+        width: 100%;
+        height: 80%;
+        @include Flex(row, space-between);
+
+        .top-items {
+          width: 32%;
+          height: 85%;
+          @include Flex(column, space-around);
+          align-items: flex-start;
+
+          p {
+            @include Font(1rem, 165%, 600);
+            color: #ffffff;
+          }
+
+          .top-icons {
+            width: 15%;
+            height: 15%;
+            @include Flex(row, space-between);
+          }
+
+          h3 {
+            @include Font(1.25rem, 160%, 800);
+            color: #ffffff;
+            margin: 0;
+            margin-top: 15px;
+          }
+          h5 {
+            @include Font(1rem, 160%, 600);
+            color: #fbbe07;
+          }
+
+          .top-center-items {
+            width: 95%;
+            height: 15%;
+            @include Flex(row, flex-start);
+
+            span {
+              @include Font(1rem, 160%, 600);
+              color: #ffffff;
+              display: inline-block;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .content-bottom {
+        width: 100%;
+        height: 15%;
+        border-top: 1.5px solid #bfbfbf;
+        @include Flex(row, space-between);
+
+        p {
+          @include Font(1rem, 160%, 600);
+          color: #ffffff;
+        }
+        span {
+          @include Font(1rem, 160%, 600);
+          color: #ffffff;
+
+          i {
+            color: #8d8d8d;
+            font-style: normal;
           }
         }
       }

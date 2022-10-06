@@ -5,6 +5,7 @@
     <bima-news-content />
     <bima-reviews />
     <about-company />
+    <bima-partners-slider/>
   </div>
 </template>
 <script>
@@ -13,6 +14,7 @@ import BimaSliderContent from "@/components/content-items/content-top-item/BimaS
 import BimaNewsContent from "@/components/content-items/content-top-item/BimaNewsContent.vue";
 import BimaReviews from "@/components/content-items/content-top-item/BimaReviews.vue";
 import AboutCompany from "@/components/content-items/content-top-item/AboutCompany.vue";
+import BimaPartnersSlider from "@/components/content-items/content-top-item/BimaPartnersSlider.vue";
 export default {
   name: "bima-content",
   components: {
@@ -21,6 +23,7 @@ export default {
     BimaNewsContent,
     BimaReviews,
     AboutCompany,
+    BimaPartnersSlider
   },
 };
 </script>
