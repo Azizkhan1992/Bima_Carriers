@@ -1344,6 +1344,116 @@ body {
     }
   }
 
+  // News Container
+  .bima-news-container {
+    width: 100%;
+    height: auto;
+    margin-top: 120px;
+
+    // Header
+    .news-header-container {
+      width: 100%;
+      height: 460px;
+      background: url("@/assets/News/Header/bgImage.png") no-repeat;
+      background-size: 100% 100%;
+
+      .news-bg-container {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(26, 29, 32, 0.65) 50%,
+          rgba(26, 29, 32, 0.55) 98.28%
+        );
+        opacity: 0.85;
+
+        .news-content {
+          width: 85%;
+          height: 100%;
+          margin: auto;
+          @include Flex(column);
+          align-items: flex-start;
+
+          h1 {
+            @include Font(2rem, 160%, 800);
+            color: #ffffff;
+          }
+
+          .news-breadcrumbs {
+            width: 100%;
+            height: 10%;
+          }
+        }
+      }
+    }
+
+    // News Content
+    .news-items-container {
+      width: 100%;
+      height: 1000px;
+      margin-top: 100px;
+
+      .news-items-content {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(row, space-between);
+        flex-wrap: wrap;
+        flex: 0 auto;
+
+        .news-items {
+          width: 32.5%;
+          height: 48%;
+          @include Flex(column, space-between);
+          align-items: flex-start;
+          box-shadow: 0px 0px 12px 3px rgba(56, 56, 56, 0.05);
+
+          h3 {
+            @include Font(1rem, 140%, 600);
+            margin: 0;
+            padding-left: 20px;
+            box-sizing: border-box;
+          }
+
+          span {
+            @include Font(1rem, 160%, 600);
+            color: #8d8d8d;
+            display: inline-block;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+          }
+
+          .news-date {
+            width: 50%;
+            height: 10%;
+            padding-left: 20px;
+            box-sizing: border-box;
+            @include Flex;
+
+            &::after {
+              content: "";
+              width: 150px;
+              height: 2px;
+              background-color: #fbbe07;
+            }
+
+            p {
+              @include Font(1rem, 160%, 600);
+              color: #fbbe07;
+              width: 100%;
+            }
+          }
+
+          img {
+            width: 100%;
+            height: 50%;
+          }
+        }
+      }
+    }
+  }
+
   // Footer
   .bima-footer-container {
     width: 100%;
