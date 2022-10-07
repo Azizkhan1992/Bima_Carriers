@@ -26,6 +26,10 @@ const routes = [
             {
                 path: '/news',
                 component: () => import('@/views/news/BimaNews.vue')
+            },
+            {
+                path: '/contacts',
+                component: () => import('@/views/contacts/OurContactsContent.vue')
             }
         ]
     }

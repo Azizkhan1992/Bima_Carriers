@@ -70,7 +70,7 @@
                 </div>
                 <div class="about-hidden" :class="isAboutActive ? 'about-active' : 'about-deactive'">
                     <a href="/our-group">Наша команда</a>
-                    <a href="">Обратная связь</a>
+                    <a href="/contacts">Обратная связь</a>
                 </div>
               </li>
               <li><a href="/">Главная</a></li>

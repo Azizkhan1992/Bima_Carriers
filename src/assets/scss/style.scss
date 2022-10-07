@@ -1454,6 +1454,217 @@ body {
     }
   }
 
+  // Contacts Content
+  .our-contacts-container{
+    width: 100%;
+    height: auto;
+    margin-top: 120px;
+
+
+    // Contacts Header
+    .contacts-header-container{
+      width: 100%;
+      height: 460px;
+      background: url('@/assets/Contacts/Header/bgImage.png') no-repeat;
+      background-size: 100% 100%;
+
+      .contacts-bg-container{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(26, 29, 32, 0.65) 50%, rgba(26, 29, 32, 0.55) 98.28%);
+        opacity: 0.85;
+        
+        .contacts-header-content{
+          width: 85%;
+          height: 100%;
+          margin: auto;
+          @include Flex(column);
+          align-items: flex-start;
+
+          h1{
+            @include Font(2rem, 160%, 800);
+            color: #ffffff;
+          }
+
+          .contacts-breadcrumbs{
+            width: 100%;
+            height: 10%;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+
+    // Contacts Content
+    .contacts-content{
+      width: 100%;
+      height: 1080px;
+      margin-top: 100px;
+
+      .contacts-wrapper{
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        box-shadow: 0px 0px 12px 3px rgba(56, 56, 56, 0.05);
+        @include Flex;
+
+        .contacts-inner-wrapper{
+          width: 96.5%;
+          height: 97%;
+          @include Flex(row, space-between);
+          flex-wrap: wrap;
+          flex: 0 auto;
+
+          .our-contacts{
+            width: 44%;
+            height: 48%;
+
+            .our-contacts-content{
+              width: 100%;
+              height: 100%;
+              @include Flex(column,flex-start);
+              align-items: flex-start;
+
+              h3{
+                @include Font(1.25rem, 140%, 600);
+                margin: 0;
+                margin-bottom: 25px;
+              }
+
+              .our-contact-items{
+                width: 100%;
+                height: 10%;
+                @include Flex(row, flex-start);
+
+                &.footer{
+                  margin-top: 25px;
+                }
+
+                img{
+                  margin-right: 15px;
+                }
+                p{
+                  @include Font(1rem, 160%, 600);
+                  color: #8d8d8d;
+                  margin-right: 15px;
+                }
+              }
+            }
+          }
+
+          .write-us{
+            width: 54%;
+            height: 48%;
+
+            .write-content{
+              width: 100%;
+              height: 100%;
+              @include Flex(column, space-between);
+              align-items: flex-start;
+
+              h3{
+                @include Font(1.25rem, 140%, 600);
+                margin: 0;
+              }
+
+              .write-wrapper{
+                width: 100%;
+                height: 90%;
+                @include Flex(row, flex-start);
+                flex-wrap: wrap;
+                flex: 0 auto;
+
+                input{
+                  padding: 12px 20px;
+                  box-sizing: border-box;
+                  @include Font(1rem, 160%, 600);
+                  color: #c5c5c5;
+                  letter-spacing: 0.025em;
+                  border: 1.5px solid #312b2b;
+                  border-radius: 5px;
+
+                  &:hover{
+                    border: 1.5px solid #fbbe07;
+                  }
+
+                  &:focus{
+                    outline: none;
+                  }
+                }
+
+                .name{
+                  width: 58%;
+                  height: 50px;
+                  margin-right: 25px;
+                }
+
+                .mail{
+                  width: 38%;
+                  height: 50px;
+                }
+
+                .title{
+                  width: 100%;
+                  height: 50px;
+                }
+
+                .descript{
+                  width: 100%;
+                  height: 150px;
+                  resize: none;
+                  padding: 12px 0 0 20px;
+                  @include Font(1rem, 160%, 600);
+                  color: #c5c5c5;
+                  letter-spacing: 0.025em;
+                  border-radius: 5px;
+                  border: 1.5px solid #312b2b;
+
+                  &:hover{
+                    border: 1.5px solid #fbbe07;
+                  }
+
+                  &:focus{
+                    outline: none;
+                  }
+                }
+
+                .captcha{
+                  width: 50%;
+                  height: 90px;
+                  margin-right: 20px;
+                }
+
+                .send-btn{
+                  width: 160px;
+                  height: 50px;
+                  border-radius: 100px;
+                  border: none;
+                  padding: 0;
+                  background-color: #fbbe07;
+                  cursor: pointer;
+                  @include Font(1rem, 22px, 600);
+                  transition: all 0.5s ease-out;
+
+                  &:hover{
+                    background-color: #fff;
+                    border: 1.5px solid #fbbe07;
+                    color: #fbbe07;
+                    transition: all 0.5s ease-in;
+                  }
+                }
+              }
+            }
+          }
+
+          .our-location{
+            width: 100%;
+            height: 48%;
+          }
+        }
+      }
+    }
+  }
+
   // Footer
   .bima-footer-container {
     width: 100%;
